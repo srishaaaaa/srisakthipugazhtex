@@ -138,12 +138,6 @@ const parseOrderItems = (items: unknown): Record<string, unknown>[] => {
   return []
 }
 
-// Excel auto-parses plain digits/dates in a CSV as numbers/dates (scientific
-// notation for long phone numbers, reformatted dates), no matter how wide the
-// column is. Wrapping a field as ="..." forces Excel to import it as literal
-// text and leave it alone.
-const csvForceText = (value: unknown) => `="${String(value).replace(/"/g, '""')}"`
-
 const exportCSV = (orders: BillingOrder[]) => {
   const header = ['Invoice No', 'Customer', 'Phone', 'Bill Type', 'Coupon', 'Discount', 'Delivery', 'Total', 'Date', 'Status']
   const rows = orders.map((order) => {
@@ -155,13 +149,13 @@ const exportCSV = (orders: BillingOrder[]) => {
     return [
       order.invoice_no || '—',
       order.customer_name,
-      csvForceText(order.phone ? formatPhoneDisplay(order.phone) : ''),
+      order.phone ? formatPhoneDisplay(order.phone) : '',
       billType,
       order.coupon_code || '',
       toNumber(order.discount_amount, 0).toFixed(2),
       toNumber(order.delivery_charge, 0).toFixed(2),
       toNumber(order.total, 0).toFixed(2),
-      csvForceText(new Date(order.created_at).toLocaleDateString('en-IN')),
+      new Date(order.created_at).toLocaleDateString('en-IN'),
       order.status,
     ]
   })
