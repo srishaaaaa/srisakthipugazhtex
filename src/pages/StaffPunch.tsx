@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { supabase } from '../lib/supabase'
 import { CheckCircle, LogIn, LogOut, ChevronLeft } from 'lucide-react'
-import { BRAND_EN } from '../lib/brand'
+import { BRAND_EN, BRAND_LOGO } from '../lib/brand'
 
 interface Staff {
   id: string
@@ -266,7 +266,7 @@ export default function StaffPunch({ embedded = false }: StaffPunchProps) {
     <div className="min-h-screen bg-[#FFF8F3] flex flex-col">
       <div className="bg-shopCard px-5 py-4 flex items-center justify-between shadow-md">
         <div className="flex items-center gap-3">
-          <img src="/logo.png" alt="Logo" className="h-9 w-9 rounded-xl object-cover bg-white" onError={e => { (e.target as HTMLImageElement).style.display = 'none' }} />
+          <img src={BRAND_LOGO} alt="Logo" className="h-9 w-9 rounded-xl object-cover bg-white" onError={e => { (e.target as HTMLImageElement).style.display = 'none' }} />
           <div>
             <p className="text-white font-black text-base leading-tight">{BRAND_EN}</p>
             <p className="text-white/70 text-[11px] font-bold">Staff Attendance</p>

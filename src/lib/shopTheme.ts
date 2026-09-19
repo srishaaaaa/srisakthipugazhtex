@@ -71,9 +71,10 @@ export const applyShopTheme = (hex: string) => {
   // Page background is plain white, not a red-tinted "cream" — the red/white
   // theme reads as red + white (+ near-black chrome below), not red + beige.
   root.style.setProperty('--shop-tint-rgb', '255 255 255')
-  // Deep chrome (sidebars, headers) mixes almost all the way to black so it
-  // reads as true black, matching the logo's black silhouette detailing.
-  root.style.setProperty('--shop-deep-rgb', channels(mixBlack(rgb, 0.85)))
+  // Deep chrome (sidebars, headers) stays a very dark shade of the card
+  // colour itself — mixing further towards black than this crushes a red
+  // card colour into a muddy near-black brown instead of a deep red.
+  root.style.setProperty('--shop-deep-rgb', channels(mixBlack(rgb, 0.45)))
   root.style.setProperty('--shop-on-card', contrastOn(base))
   try {
     window.localStorage.setItem(THEME_CACHE_KEY, base)

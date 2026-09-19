@@ -7,11 +7,11 @@
    Defaults match the colours the app already shipped with; Store Settings
    overwrites these on :root at runtime (src/lib/shopTheme.ts). */
 :root {
-  --shop-card-rgb: 160 8 24;
-  --shop-accent-rgb: 168 28 42;
-  --shop-soft-rgb: 234 201 204;
+  --shop-card-rgb: 90 2 1;
+  --shop-accent-rgb: 103 22 21;
+  --shop-soft-rgb: 219 199 199;
   --shop-tint-rgb: 255 255 255;
-  --shop-deep-rgb: 24 1 4;
+  --shop-deep-rgb: 50 1 1;
   --shop-on-card: #FFFFFF;
 }
 

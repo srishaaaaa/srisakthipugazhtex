@@ -12,6 +12,7 @@ import {
   BRAND_EMAIL,
   BRAND_EN,
   BRAND_INSTAGRAM,
+  BRAND_LOGO,
   BRAND_OWNER_NAME,
   BRAND_PHONE_DISPLAY,
   BRAND_SUBTITLE,
@@ -138,7 +139,7 @@ export default function StoreSettings() {
     if (isValidHex(form.cardColor)) applyShopTheme(form.cardColor)
   }, [form.cardColor])
 
-  const shownLogo = logoPreview || form.logoUrl
+  const shownLogo = logoPreview || form.logoUrl || BRAND_LOGO
   const instagramLink = useMemo(() => toInstagramLink(form.instagramId), [form.instagramId])
 
   const sareeCategories = useMemo(() => {
