@@ -8,7 +8,7 @@
  * backgrounds, layout, typography, spacing and components are untouched.
  */
 
-export const DEFAULT_CARD_COLOR = '#A00818'
+export const DEFAULT_CARD_COLOR = '#5A0201'
 
 const THEME_CACHE_KEY = 'shop-card-color'
 
@@ -105,6 +105,7 @@ export const resolveCardSoftHex = (): string => toHex(mixWhite(toRgb(readCachedC
 
 /** Suggested swatches — all "card colour + white" safe. */
 export const CARD_COLOR_PRESETS = [
+  '#5A0201',
   '#A00818',
   '#D6402E',
   '#8B1C31',

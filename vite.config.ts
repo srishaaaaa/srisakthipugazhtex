@@ -21,7 +21,7 @@ export default defineConfig({
         name: "Sri Sakthi Pugazh Tex Billing",
         short_name: "Sri Sakthi Pugazh Tex",
         description: "Sri Sakthi Pugazh Tex Billing – POS, advance orders, catalog, invoices, and analytics.",
-        theme_color: '#A00818',
+        theme_color: '#5A0201',
         background_color: '#FFFFFF',
         display: 'standalone',
         orientation: 'any',
